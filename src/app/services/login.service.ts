@@ -13,21 +13,18 @@ export class LoginService {
 
   constructor(private autfire: AngularFireAuth) { }
 
-  InicioSesion(correo: string, contraseña: string){
+  InicioSesion(correo: string, contrasena: string){
     return new Promise(( retornar, reject ) => {
-        this.autfire.auth.signInWithEmailAndPassword(correo, contraseña)
+        this.autfire.auth.signInWithEmailAndPassword(correo, contrasena)
         .then( Datausuario => retornar(Datausuario),
         error => reject(error));
     });
   }
 
 
-  Registrarse(correo: string, contraseña: string){
+  Registrarse(correo: string, contrasena: string){
     return new Promise((retornar, reject) => {
-      this.autfire.auth.createUserWithEmailAndPassword(correo, contraseña)
-      // .then(userData => {retornar(userData),
-        // this.CrearRoles(userData.user);
-        // }).catch(err => reject(err));
+      this.autfire.auth.createUserWithEmailAndPassword(correo, contrasena)
         .then(userData => retornar(userData),
         err => reject(err));
       });
