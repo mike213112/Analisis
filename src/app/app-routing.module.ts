@@ -9,14 +9,13 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { InventarioComponent } from './componentes/inventario/inventario.component';
 
 const routes: Routes = [
-  { path: 'principal', component: PrincipalComponent },
-  { path: 'principal/user/login', component: LoginComponent},
-  { path: 'principal/user/register', component: RegisterComponent },
+  { path: 'accounts/login', component: LoginComponent},
+  { path: 'accounts/register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: 'home/usuarios', component: RrhhComponent },
   { path: 'home/perfil', component: PerfilComponent },
   { path: 'home/inventario', component: InventarioComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'principal' }
+  { path: '**', pathMatch: 'full', redirectTo: 'accounts/login' }
 ];
 
 @NgModule({
