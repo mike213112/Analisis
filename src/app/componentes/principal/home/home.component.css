@@ -1,0 +1,22 @@
+.fondo {
+  image-resolution: 20%;
+  background-size: 0px 5px;
+}
+.btn {
+  position: absolute;
+  margin-left: 10px;
+  top: 40%;
+  width: 47%;
+  height: 55%;
+  font-size: 400%;
+  text-align: center;
+}
+.btn1 {
+  position: absolute;
+  margin-left: 10px;
+  top: 40%;
+  width: 47%;
+  height: 55%;
+  font-size: 450%;
+  text-align: center;
+}
