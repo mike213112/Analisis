@@ -14,11 +14,11 @@ export class HomeComponent implements OnInit {
   }
 
   Consultar(){
-    this.router.navigate(['/home/usuarios']);
+    this.router.navigate(['/home/user/admin']);
   }
 
   Perfil(){
-    this.router.navigate(['/home/perfil']);
+    this.router.navigate(['/home/user/profile']);
   }
 
 }

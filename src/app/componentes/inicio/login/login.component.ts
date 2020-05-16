@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../../services/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'analisis-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   contrasena: string;
 
   constructor(private router: Router,
-              private autenticar: LoginService) { }
+              private autenticar: LoginService,
+              private toat: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -21,9 +23,11 @@ export class LoginComponent implements OnInit {
   Inicio(){
     this.autenticar.InicioSesion(this.correo, this.contrasena)
     .then(( res ) => {
+      this.toat.success('Bienvenido de nuevo');
       this.router.navigate(['/home']);
     }).catch(( error) => {
-      this.router.navigate(['/principal/user/login']);
+      this.toat.error('Sus credenciales son incorrectas');
+      this.router.navigate(['/accounts/login']);
     });
   }
 

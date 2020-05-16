@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,9 @@ import { RrhhComponent } from './componentes/rrhh/rrhh.component';
 import { InventarioComponent } from './componentes/inventario/inventario.component';
 import { PrincipalComponent } from './componentes/inicio/principal/principal.component';
 import { CrearUsuarioComponent } from './componentes/perfil/crear-usuario/crear-usuario.component';
+import { CrearusuarioComponent } from './componentes/modals/crearusuario/crearusuario.component';
+import { CrearcuentaComponent } from './componentes/modals/crearcuenta/crearcuenta.component';
+import { EditarusuarioComponent } from './componentes/modals/editarusuario/editarusuario.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,10 @@ import { CrearUsuarioComponent } from './componentes/perfil/crear-usuario/crear-
     RrhhComponent,
     InventarioComponent,
     PrincipalComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    CrearusuarioComponent,
+    CrearcuentaComponent,
+    EditarusuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +48,7 @@ import { CrearUsuarioComponent } from './componentes/perfil/crear-usuario/crear-
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [

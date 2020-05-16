@@ -1,1 +1,38 @@
-<p>rrhh works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">MABEME</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" *ngIf="isLogged">
+                <a class="nav-link" [routerLink]="['/principal/ingresar']" routerLinkActive="active">
+                Producto
+            </a>
+            </li>
+            <li class="nav-item" *ngIf="isLogged">
+                <a class="nav-link" [routerLink]="['/principal/inventario']" routerLinkActive="active">
+                Inventario
+            </a>
+            </li>
+        </ul>
+    </div>
+    <!--
+    #########################################################################################################
+-->
+    <!-- <a class="navbar-brand hidden-md-down"></a> -->
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="home/user/admin/create/user">Crear Cuenta</a>
+                <a class="dropdown-item" href="home/user/admin/create/employee">Crear Empleado</a>
+                <a class="dropdown-item" href="/home/user/admin/edit_or_delete/employee">Editar Empleado</a>
+                <a class="dropdown-item" href="/home/user/admin/view/employee/profile">Ver Empleados</a>
+                <a class="dropdown-item" href="/home">Regresar</a>
+            </div>
+        </li>
+    </ul>
+</nav>
