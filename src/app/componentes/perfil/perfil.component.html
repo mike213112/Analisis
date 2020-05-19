@@ -1,1 +1,83 @@
-<p>perfil works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">MABEME</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    </div>
+    <a class="navbar-brand hidden-md-down"></a>
+    <button type="button" class="btn btn-light" (click)="Regresar()">Regresar</button>
+</nav>
+<br>
+<div class="container">
+    <div style="display: table;" class="card ">
+        <div class="card-header">
+            <h1 class="color">Listado de Empleados</h1>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover table-dark ">
+                <thead>
+                    <tr>
+                        <th>Id_Empleado</th>
+                        <th style="min-width: 250px;">Nombre y Apellido</th>
+                        <th>Departamento</th>
+                        <th style="min-width: 140px;">Salario Base</th>
+                        <th style="min-width: 140px;">Bonificación</th>
+                        <th style="min-width: 140px;">Horas Extras</th>
+                        <th style="min-width: 140px;">Comisiones</th>
+                        <th style="min-width: 140px;">Dias Laborales</th>
+                        <th style="min-width: 140px;">Viaticos</th>
+                        <th style="min-width: 240px;">Gastos de Representación</th>
+                        <th style="min-width: 140px;">IGSS -4.83%</th>
+                        <th style="min-width: 140px;">IRTRA 1%</th>
+                        <th style="min-width: 140px;">Salario Base</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let listar of listarEmpleados; index as i">
+                        <!-- <th scope="row">{{i+1}}</th> -->
+                        <td>
+                            {{listar.idemployee}}
+                        </td>
+                        <td>
+                            {{listar.nombre}} {{listar.apellido}}
+                        </td>
+                        <td>
+                            {{listar.departamento}}
+                        </td>
+                        <td>
+                            {{listar.salarioBase}}
+                        </td>
+                        <td>
+                            {{listar.bonificacion}}
+                        </td>
+                        <td>
+                            {{listar.horasExtras}}
+                        </td>
+                        <td>
+                            {{listar.comisiones}}
+                        </td>
+                        <td>
+                            {{listar.diasLaborales}}
+                        </td>
+                        <td>
+                            {{listar.viaticos}}
+                        </td>
+                        <td>
+                            {{listar.gastosDeRepresentacion}}
+                        </td>
+                        <td>
+                            {{listar.igss}}
+                        </td>
+                        <td>
+                            {{listar.aporteAlIva}}
+                        </td>
+                        <td>
+                            {{listar.salarioBruto}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

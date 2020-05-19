@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  Regresar(){
-    this.router.navigate(['/principal']);
-  }
+  // Regresar(){
+  //   this.router.navigate(['/principal']);
+  // }
 
 }

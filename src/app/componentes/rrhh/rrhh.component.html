@@ -4,7 +4,7 @@
   <span class="navbar-toggler-icon"></span>
 </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <!-- <ul class="navbar-nav mr-auto">
             <li class="nav-item" *ngIf="isLogged">
                 <a class="nav-link" [routerLink]="['/principal/ingresar']" routerLinkActive="active">
                 Producto
@@ -15,13 +15,13 @@
                 Inventario
             </a>
             </li>
-        </ul>
+        </ul> -->
     </div>
     <!--
     #########################################################################################################
 -->
-    <!-- <a class="navbar-brand hidden-md-down"></a> -->
-    <ul class="navbar-nav">
+    <a class="navbar-brand hidden-md-down"></a>
+    <!-- <ul class="navbar-nav">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <span class="navbar-toggler-icon"></span>
@@ -34,5 +34,21 @@
                 <a class="dropdown-item" href="/home">Regresar</a>
             </div>
         </li>
-    </ul>
+    </ul> -->
+    <div class="btn-group dropleft">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="dropdown-menu ">
+            <a class="dropdown-item" href="home/user/admin/create/user" (click)='CrearUser()'>Crear Cuenta</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="home/user/admin/create/employee" (click)='CrearEmpleado()'>Crear Empleado</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="home/user/admin/edit_or_delete/employee" (click)='Editar()'>Editar o Eliminar Empleado</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="home/user/admin/view/employee/profile" (click)='VerEmpleado()'>Ver Empleados</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/home" (click)='Regresar()'>Regresar</a>
+        </div>
+    </div>
 </nav>

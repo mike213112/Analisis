@@ -1,0 +1,102 @@
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modificar Empleado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="modal-body ">
+                <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+                    <!-- <div class="form-label-group" class="form-group">
+                        <input type="hidden" id="$id" name="$id" #$id="ngModel" [(ngModel)]="this.baseService.Usuarios.$idEmpleado" class="form-control">
+                    </div>
+                    <div class="form-label-group" class="form-group">
+                        <label for="recipient-name" class="col-form-label">Codigo:</label>
+                        <input type="text" id="codigo" name="codigo" #codigo="ngModel" [(ngModel)]="this.baseService.SelectProduct.codigo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="this.baseService.SelectProduct.nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Precio:</label>
+                        <input type="text" id="precio" name="precio" #precio="ngModel" [(ngModel)]="this.baseService.SelectProduct.precio" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div> -->
+                    <div class="form-label-group" class="form-group">
+                        <label for="recipient-name" class="col-form-label">Id del Empleado:</label>
+                        <input type="text" id="idemployee" class="form-control" name="idemployee" #idemployee="ngModel" [(ngModel)]="baseService.Usuarios.idemployee" placeholder="Id del Empleado">
+                        <label for="recipient-name" class="col-form-label">Nombre:</label>
+                        <input type="text" id="nombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="baseService.Usuarios.nombre" placeholder="Nombre">
+                        <label for="recipient-name" class="col-form-label">Apellido:</label>
+                        <input text="text" id="apellido" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="baseService.Usuarios.apellido" placeholder="Apellido">
+                        <label for="recipient-name" class="col-form-label">Departamento:</label>
+                        <input text="text" id="departamento" class="form-control" name="departamento" #departamento="ngModel" [(ngModel)]="baseService.Usuarios.departamento" placeholder="Departamento">
+                    </div>
+                    <!-- <label for="recipient-name" class="col-form-label">Id del Empleado:</label>
+                    <input type="text" id="idemployee" class="form-control" name="idemployee" #idemployee="ngModel" [(ngModel)]="baseService.Usuarios.idemployee" placeholder="Id del Empleado">
+                    <input type="text" id="nombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="baseService.Usuarios.nombre" placeholder="Nombre">
+                    <input text="text" id="apellido" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="baseService.Usuarios.apellido" placeholder="Apellido">
+                    <select id="departamento" name="opt_1" class="form-control" name="departamento" #departamento="ngModel" [(ngModel)]="baseService.Usuarios.departamento">
+                              <option class="placeholder" value="seleccionar">
+                              Seleccionar el Departamento
+                              </option>
+                              <option *ngFor="let depart of listarUsuarios" >
+                                {{depart.departamento}}
+                              </option>
+                              <option *ngFor="let depart of listarUsuarios" >
+                                {{depart.horasExtras}}
+                              </option>
+                            </select> -->
+                    <div class="form-label-group" class="form-group">
+                        <label for="recipient-name" class="col-form-label">Salario Base:</label>
+                        <input text="text" id="salarioBase" class="form-control" name="salarioBase" #salarioBase="ngModel" [(ngModel)]="baseService.Usuarios.salarioBase" placeholder="Salario Base">
+                        <label for="recipient-name" class="col-form-label">Bonificación:</label>
+                        <input text="text" id="bonificacion" class="form-control" name="bonificacion" #bonificacion="ngModel" [(ngModel)]="baseService.Usuarios.bonificacion" placeholder="Bonificacion">
+                        <label for="recipient-name" class="col-form-label">Horas Extras:</label>
+                        <!-- <select id="horasExtras" class="form-control" name="horasExtras" #horasExtras="ngModel" [(ngModel)]="baseService.Usuarios.horasExtras">
+                              <option class="placeholder" value="seleccionar" >
+                              Seleccione las Horas Extras
+                              </option>
+                              <option *ngFor="let horas of listarUsuarios" >
+                                {{horas.horasExtras}}
+                              </option>
+                            </select> -->
+                        <input text="text" id="bonificacion" class="form-control" name="horasExtras" #horasExtras="ngModel" [(ngModel)]="baseService.Usuarios.horasExtras" placeholder="Horas Extras">
+                        <label for="recipient-name" class="col-form-label">Comisiones:</label>
+                        <input text="text" id="comisiones" class="form-control" name="comisiones" #comisiones="ngModel" [(ngModel)]="baseService.Usuarios.comisiones" placeholder="Comisiones">
+                        <label for="recipient-name" class="col-form-label">Dias Laborales:</label>
+                        <!-- <select id="diasLaborales" class="form-control" name="diasLaborales" #diasLaborales="ngModel" [(ngModel)]="baseService.Usuarios.diasLaborales">
+                              <option class="placeholder" value="seleccionar" >
+                              Seleccionar Dias Laborales
+                              </option>
+                              <option *ngFor="let dias of listarUsuarios" >
+                                {{dias.diasLaborales}}
+                              </option>
+                            </select> -->
+                        <input text="text" id="diasLaborales" class="form-control" name="diasLaborales" #diasLaborales="ngModel" [(ngModel)]="baseService.Usuarios.diasLaborales" placeholder="Dias Laborales">
+                        <label for="recipient-name" class="col-form-label">Viaticos:</label>
+                        <input text="text" id="viaticos" class="form-control" name="viaticos" #viaticos="ngModel" [(ngModel)]="baseService.Usuarios.viaticos" placeholder="Viaticos">
+                        <label for="recipient-name" class="col-form-label">Gastos de Representacion:</label>
+                        <input text="text" id="gastosDeRepresentacion" class="form-control" name="gastosDeRepresentacion" #gastosDeRepresentacion="ngModel" [(ngModel)]="baseService.Usuarios.gastosDeRepresentacion" placeholder="Gastos De Representacion">
+                        <label for="recipient-name" class="col-form-label">IGSS:</label>
+                        <input text="text" id="igss" class="form-control" name="igss" #igss="ngModel" [(ngModel)]="baseService.Usuarios.igss" placeholder="IGGS">
+                        <label for="recipient-name" class="col-form-label">IRTRA:</label>
+                        <input text="text" id="aporteAlIva" class="form-control" name="aporteAlIva" #aporteAlIva="ngModel" [(ngModel)]="baseService.Usuarios.aporteAlIva" placeholder="Aporte Al Iva">
+                        <label for="recipient-name" class="col-form-label">Salario Bruto:</label>
+                        <input text="text" id="salarioBruto" class="form-control" name="salarioBruto" #salarioBruto="ngModel" [(ngModel)]="baseService.Usuarios.salarioBruto" placeholder="Salario Bruto">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-block btn-secondary" #btnClose data-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-block btn-primary">Guardar Cambios</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

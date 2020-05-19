@@ -1,0 +1,18 @@
+.card {
+  background-color: black;
+}
+.card .color {
+  color: white;
+}
+.container {
+  max-width: 95%;
+  overflow-x: scroll;
+}
+.card-body th,
+.card-body td {
+  border-right: 1px solid #ccc;
+}
+.card-body th:last-child,
+.card-body td:last-child {
+  border-right: 0;
+}

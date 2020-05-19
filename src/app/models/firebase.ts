@@ -1,5 +1,6 @@
 export class Firebase {
   $idEmpleado: string;
+  idemployee: number;
   nombre: string;
   apellido: string;
   departamento: string;

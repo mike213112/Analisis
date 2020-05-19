@@ -1,1 +1,67 @@
-<p>crearusuario works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">MABEME</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    </div>
+    <a class="navbar-brand hidden-md-down"></a>
+    <button type="button" class="btn btn-light" (click)="Regresar()">Regresar</button>
+</nav>
+
+<section id="crearempleado" class="mb-3 mt-3">
+    <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_login" style="width: 600;">
+            <div class="card-header ">
+                <h2 style="text-align: center;">Empleados Nuevos</h2>
+                <div class="card-body">
+                    <form id="formulario" name="formulario" #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+                        <div class="form-label-group" class="form-group">
+                            <input type="text" class="form-control" name="idemployee" #idemployee="ngModel" [(ngModel)]="baseService.Usuarios.idemployee" placeholder="Id del Empleado">
+                            <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="baseService.Usuarios.nombre" placeholder="Nombre">
+                            <input text="text" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="baseService.Usuarios.apellido" placeholder="Apellido">
+                            <select id="opt_1" name="opt_1" class="form-control" name="departamento" #departamento="ngModel" [(ngModel)]="baseService.Usuarios.departamento">
+                              <option class="placeholder" value="seleccionar">
+                              Seleccionar el Departamento
+                              </option>
+                              <option *ngFor="let depart of listarDepartamentos" >
+                                {{depart.departamento}}
+                              </option>
+                            </select>
+                            <br>
+                            <input text="text" class="form-control" name="salarioBase" #salarioBase="ngModel" [(ngModel)]="baseService.Usuarios.salarioBase" placeholder="Salario Base">
+                            <input text="text" class="form-control" name="bonificacion" #bonificacion="ngModel" [(ngModel)]="baseService.Usuarios.bonificacion" placeholder="Bonificacion">
+                            <select id="opt_1" name="opt_1" class="form-control" name="horasExtras" #horasExtras="ngModel" [(ngModel)]="baseService.Usuarios.horasExtras">
+                              <option class="placeholder" value="seleccionar" >
+                              Seleccione las Horas Extras
+                              </option>
+                              <option *ngFor="let horas of listarHorasExtras" >
+                                {{horas.horasExtras}}
+                              </option>
+                            </select>
+                            <input text="text" class="form-control" name="comisiones" #comisiones="ngModel" [(ngModel)]="baseService.Usuarios.comisiones" placeholder="Comisiones">
+                            <select id="opt_1" name="opt_1" class="form-control" name="diasLaborales" #diasLaborales="ngModel" [(ngModel)]="baseService.Usuarios.diasLaborales">
+                              <option class="placeholder" value="seleccionar" >
+                              Seleccionar Dias Laborales
+                              </option>
+                              <option *ngFor="let dias of listarDiasLaborables" >
+                                {{dias.diasLaborales}}
+                              </option>
+                            </select>
+                            <input text="text" class="form-control" name="viaticos" #viaticos="ngModel" [(ngModel)]="baseService.Usuarios.viaticos" placeholder="Viaticos">
+                            <input text="text" class="form-control" name="gastosDeRepresentacion" #gastosDeRepresentacion="ngModel" [(ngModel)]="baseService.Usuarios.gastosDeRepresentacion" placeholder="Gastos De Representacion">
+                            <input text="text" class="form-control" name="igss" #igss="ngModel" [(ngModel)]="baseService.Usuarios.igss" placeholder="IGGS">
+                            <input text="text" class="form-control" name="aporteAlIva" #aporteAlIva="ngModel" [(ngModel)]="baseService.Usuarios.aporteAlIva" placeholder="Aporte Al Iva">
+                            <input text="text" class="form-control" name="salarioBruto" #salarioBruto="ngModel" [(ngModel)]="baseService.Usuarios.salarioBruto" placeholder="Salario Bruto">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-block btn-primary" type="submit">
+                            Ingresar
+                          </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

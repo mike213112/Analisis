@@ -34,6 +34,10 @@ export class LoginService {
     return this.autfire.authState.pipe(map(usuario => usuario));
   }
 
+  logout() {
+    return this.autfire.auth.signOut();
+  }
+
 }
 
 
