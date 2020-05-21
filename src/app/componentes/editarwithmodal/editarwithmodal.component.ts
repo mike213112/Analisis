@@ -1,4 +1,4 @@
-import { Firebase } from './../../models/firebase';
+import { Firebase1 } from '../../models/firebase1';
 import { FirebaseService } from './../../services/firebase.service';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
@@ -11,39 +11,29 @@ import { NgForm } from '@angular/forms';
 })
 export class EditarwithmodalComponent implements OnInit {
 
-  listarUsuarios: Firebase[];
-
   constructor(private toastr: ToastrService,
               public baseService: FirebaseService) {
                }
 
-  @ViewChild('btnClose') btnClose: ElementRef;
-  ngOnInit(){
-    this.baseService.ObtenerUsuarios()
-    .snapshotChanges()
-    .subscribe(item => {
-      this.listarUsuarios = [];
-      item.forEach(element => {
-        let x = element.payload.toJSON();
-        x["$id"] = element.key;
-        this.listarUsuarios.push(x as Firebase);
-      });
-    });
+    @ViewChild('btnClose') btnClose: ElementRef;
+  ngOnInit(): void{
+
   }
 
   onSubmit(myform: NgForm): void {
     if(confirm('Estas seguro de que quieres modificar este empleado?')){
+      // this.baseService.ActualizarUsuario(myform.value);
       this.baseService.ActualizarUsuario(myform.value);
       this.toastr.success('Producto Actualizado');
       this.resetForm(myform);
-      this.btnClose.nativeElement.click();
     }
   }
 
   resetForm(myform?: NgForm){
     if(myform != null)
     myform.reset();
-    this.baseService.Usuarios = new Firebase();
+    this.baseService.Usuarios = new Firebase1();
   }
+
 
 }

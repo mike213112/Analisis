@@ -1,5 +1,5 @@
 import { ToastrService } from 'ngx-toastr';
-import { Firebase } from './../../models/firebase';
+import { Firebase1 } from '../../models/firebase1';
 import { FirebaseService } from './../../services/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
-  listarEmpleados: Firebase[];
+  listarEmpleados: Firebase1[];
 
   constructor(private user: FirebaseService,
               private mensaje: ToastrService,
@@ -25,7 +25,7 @@ export class PerfilComponent implements OnInit {
       item.forEach(element => {
         let x = element.payload.toJSON();
         x["$id"] = element.key;
-        this.listarEmpleados.push(x as Firebase);
+        this.listarEmpleados.push(x as Firebase1);
       });
     });
   }

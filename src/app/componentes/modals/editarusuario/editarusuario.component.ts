@@ -1,5 +1,6 @@
+import { LoginService } from './../../../services/login.service';
 import { FirebaseService } from './../../../services/firebase.service';
-import { Firebase } from './../../../models/firebase';
+import { Firebase1 } from '../../../models/firebase1';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,11 +11,13 @@ import { Router } from '@angular/router';
 })
 export class EditarusuarioComponent implements OnInit {
 
-  listarEmpleados: Firebase[];
+  email: string;
+  listarEmpleados: Firebase1[];
 
   constructor(private router: Router,
               private mensaje: ToastrService,
-              private user: FirebaseService) { }
+              private user: FirebaseService,
+              private authService: LoginService) { }
 
   ngOnInit() {
     this.user.ObtenerUsuarios()
@@ -24,10 +27,18 @@ export class EditarusuarioComponent implements OnInit {
       item.forEach(element => {
         let x = element.payload.toJSON();
         x["$id"] = element.key;
-        this.listarEmpleados.push(x as Firebase)
+        this.listarEmpleados.push(x as Firebase1);
       });
     });
-
+    //
+    this.authService.ObtenerUsuario().subscribe(auth => {
+      if(auth){
+        //this.isLogged = true;
+        this.email = auth.email;
+      // }else{
+      //   this.isLogged = false;
+       }
+    });
   }
 
   Regresar(){
@@ -35,13 +46,13 @@ export class EditarusuarioComponent implements OnInit {
     this.router.navigate(['/home/user/admin']);
   }
 
-  Editar(usuario: Firebase){
+  Editar(usuario: Firebase1){
     this.user.Usuarios = Object.assign({}, usuario);
   }
 
-  Delect($idEmpleado: string){
+  Delect($id: string){
     if(confirm('Estas seguro de querer eliminar este empleado del sistema?')){
-      this.user.EliminarUsuario($idEmpleado);
+      this.user.EliminarUsuario($id);
       this.mensaje.success('El empleado ha sido eliminado correctamente');
     }
   }

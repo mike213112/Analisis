@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand">MABEME</a>
+    <img style="height: 50px; width: 10opx;" src="../../../../assets/imagenes/logotipo.png">
+    <a class="navbar-brand">OUR SYSTEM</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -14,18 +15,20 @@
         <div class="card-header">
             <h1 class="color">Listado de Empleados</h1>
         </div>
-        <div class="card-body">
+        <div class="card-body" style="text-align: right;">
             <table class="table table-hover table-dark ">
-                <thead>
+                <thead style="text-align: right;">
                     <tr>
                         <th>Id_Empleado</th>
                         <th style="min-width: 250px;">Nombre y Apellido</th>
-                        <th>Departamento</th>
+                        <th style="min-width: 190px;">Departamento</th>
+                        <th style="min-width: 190px;">Puesto</th>
                         <th style="min-width: 140px;">Salario Base</th>
                         <th style="min-width: 140px;">Bonificación</th>
                         <th style="min-width: 140px;">Horas Extras</th>
                         <th style="min-width: 140px;">Comisiones</th>
                         <th style="min-width: 140px;">Dias Laborales</th>
+                        <th style="min-width: 140px;">Dias Festivos</th>
                         <th style="min-width: 140px;">Viaticos</th>
                         <th style="min-width: 240px;">Gastos de Representación</th>
                         <th style="min-width: 140px;">IGSS -4.83%</th>
@@ -46,6 +49,9 @@
                             {{listar.departamento}}
                         </td>
                         <td>
+                            {{listar.puesto}}
+                        </td>
+                        <td>
                             {{listar.salarioBase}}
                         </td>
                         <td>
@@ -59,6 +65,9 @@
                         </td>
                         <td>
                             {{listar.diasLaborales}}
+                        </td>
+                        <td>
+                            {{listar.diasFestivos}}
                         </td>
                         <td>
                             {{listar.viaticos}}

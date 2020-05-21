@@ -1,3 +1,4 @@
+import { ProtegerGuard } from './guards/proteger.guard';
 import { EditarusuarioComponent } from './componentes/modals/editarusuario/editarusuario.component';
 import { CrearusuarioComponent} from './componentes/modals/crearusuario/crearusuario.component';
 import { NgModule } from '@angular/core';
@@ -12,14 +13,14 @@ import { CrearcuentaComponent } from './componentes/modals/crearcuenta/crearcuen
 
 const routes: Routes = [
   { path: 'accounts/login', component: LoginComponent },
-  { path: 'accounts/register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'home/user/admin', component: RrhhComponent },
-  { path: 'home/user/admin/create/user',component: CrearcuentaComponent },
-  { path: 'home/user/admin/create/employee', component: CrearusuarioComponent },
-  { path: 'home/user/admin/edit_or_delete/employee', component: EditarusuarioComponent  },
-  { path: 'home/user/admin/view/employee/profile', component: InventarioComponent },
-  { path: 'home/user/view/profile', component: PerfilComponent },
+  { path: 'accounts/register', component: RegisterComponent, canActivate: [ProtegerGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [ProtegerGuard] },
+  { path: 'home/user/admin', component: RrhhComponent, canActivate: [ProtegerGuard] },
+  { path: 'home/user/admin/create/user',component: CrearcuentaComponent, canActivate: [ProtegerGuard] },
+  { path: 'home/user/admin/create/employee', component: CrearusuarioComponent, canActivate: [ProtegerGuard] },
+  { path: 'home/user/admin/edit_or_delete/employee', component: EditarusuarioComponent, canActivate: [ProtegerGuard] },
+  { path: 'home/user/admin/view/employee/profile', component: InventarioComponent, canActivate: [ProtegerGuard] },
+  { path: 'home/user/view/profile', component: PerfilComponent, canActivate: [ProtegerGuard] },
   { path: '**', pathMatch: 'full', redirectTo: 'accounts/login' }
 ];
 

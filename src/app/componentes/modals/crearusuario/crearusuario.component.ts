@@ -1,6 +1,6 @@
 import { element } from 'protractor';
 import { ToastrService } from 'ngx-toastr';
-import { Firebase } from './../../../models/firebase';
+import { Firebase1 } from '../../../models/firebase1';
 import { FirebaseService } from './../../../services/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -13,11 +13,12 @@ import { Router } from '@angular/router';
 })
 export class CrearusuarioComponent implements OnInit {
 
-  listarHorasExtras: Firebase[];
-  listarDepartamentos: Firebase[];
-  listarDiasLaborables: Firebase[];
-  listarSalario: Firebase[];
-  listarUsuarios: Firebase[];
+  listarHorasExtras: Firebase1[];
+  listarDepartamentos: Firebase1[];
+  listarDiasLaborables: Firebase1[];
+  listarDiasFestivos: Firebase1[];
+  listarSalario: Firebase1[];
+  listarUsuarios: Firebase1[];
 
   constructor(public baseService: FirebaseService,
               private toastr: ToastrService,
@@ -31,7 +32,7 @@ export class CrearusuarioComponent implements OnInit {
       item.forEach(element => {
         let x = element.payload.toJSON();
         x["$id"] = element.key;
-        this.listarHorasExtras.push(x as Firebase)
+        this.listarHorasExtras.push(x as Firebase1);
       });
     });
     //
@@ -42,10 +43,10 @@ export class CrearusuarioComponent implements OnInit {
       item.forEach(element => {
         let x = element.payload.toJSON();
         x["$id"] = element.key;
-        this.listarDepartamentos.push(x as Firebase)
+        this.listarDepartamentos.push(x as Firebase1);
       });
     });
-    //
+    // //
     this.baseService.ObtenerDiasLaborales()
     .snapshotChanges()
     .subscribe(item => {
@@ -53,7 +54,18 @@ export class CrearusuarioComponent implements OnInit {
       item.forEach(element => {
         let x = element.payload.toJSON();
         x["$id"] = element.key;
-        this.listarDiasLaborables.push(x as Firebase)
+        this.listarDiasLaborables.push(x as Firebase1);
+      });
+    });
+    // //
+    this.baseService.ObtenerDiasFestivos()
+    .snapshotChanges()
+    .subscribe(item => {
+      this.listarDiasFestivos = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$id"] = element.key;
+        this.listarDiasFestivos.push(x as Firebase1);
       });
     });
     //
@@ -64,10 +76,10 @@ export class CrearusuarioComponent implements OnInit {
       item.forEach(element => {
         let x = element.payload.toJSON();
         x["$id"] = element.key;
-        this.listarUsuarios.push(x as Firebase)
+        this.listarUsuarios.push(x as Firebase1);
       });
     });
-    //
+
     this.resetForm();
     // this.authService.GetUser().subscribe(auth => {
     //   if(auth){
@@ -89,7 +101,7 @@ export class CrearusuarioComponent implements OnInit {
   resetForm(myform?: NgForm){
     if(myform != null)
     myform.reset();
-    this.baseService.Usuarios = new Firebase();
+    this.baseService.Usuarios = new Firebase1();
   }
 
   Regresar(){

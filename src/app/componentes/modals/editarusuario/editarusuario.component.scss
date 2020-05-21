@@ -1,26 +1,47 @@
  .card {
      background-color: black;
  }
-
+ 
  .card .color {
      color: white;
  }
-
+ 
+ .card thead th {
+     background: black;
+     border-top: solid 0px #ccc;
+     border-spacing: 0;
+ }
+ 
  .container {
      max-width: 95%;
      overflow-x: scroll;
+     overflow-y: scroll;
+     max-height: 83%;
  }
-
+ 
+ .container .sticky {
+     position: sticky;
+     top: 0;
+ }
+ 
+ .container tbody tr .sticky {
+     background: black;
+ }
+ 
+ .card-body thead,
+ .card-body tbody,
+ .card-body td,
  .card-body th,
  .card-body td {
      border-right: 1px solid #ccc;
+     border-bottom: 1px solid #ccc;
  }
-
+ 
  .card-body th:last-child,
  .card-body td:last-child {
      border-right: 0;
  }
-
+ 
  .editar {
      position: 100px;
  }

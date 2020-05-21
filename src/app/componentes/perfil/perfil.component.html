@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand">MABEME</a>
+    <img style="height: 50px; width: 10opx;" src="../../../../assets/imagenes/logotipo.png">
+    <a class="navbar-brand">OUR SYSTEM</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -16,34 +17,39 @@
         </div>
         <div class="card-body">
             <table class="table table-hover table-dark ">
-                <thead>
+                <thead style="text-align: center;">
                     <tr>
                         <th>Id_Empleado</th>
-                        <th style="min-width: 250px;">Nombre y Apellido</th>
-                        <th>Departamento</th>
-                        <th style="min-width: 140px;">Salario Base</th>
-                        <th style="min-width: 140px;">Bonificación</th>
-                        <th style="min-width: 140px;">Horas Extras</th>
-                        <th style="min-width: 140px;">Comisiones</th>
-                        <th style="min-width: 140px;">Dias Laborales</th>
-                        <th style="min-width: 140px;">Viaticos</th>
-                        <th style="min-width: 240px;">Gastos de Representación</th>
-                        <th style="min-width: 140px;">IGSS -4.83%</th>
-                        <th style="min-width: 140px;">IRTRA 1%</th>
-                        <th style="min-width: 140px;">Salario Base</th>
+                        <th class="sticky" style="min-width: 250px;">Nombre y Apellido</th>
+                        <th class="sticky" style="min-width: 190px;">Departamento</th>
+                        <th class="sticky" style="min-width: 190px;">Puesto</th>
+                        <th class="sticky" style="min-width: 140px;">Salario Base</th>
+                        <th class="sticky" style="min-width: 140px;">Bonificación</th>
+                        <th class="sticky" style="min-width: 140px;">Horas Extras</th>
+                        <th class="sticky" style="min-width: 140px;">Comisiones</th>
+                        <th class="sticky" style="min-width: 140px;">Dias Laborales</th>
+                        <th class="sticky" style="min-width: 140px;">Dias Festivos</th>
+                        <th class="sticky" style="min-width: 140px;">Viaticos</th>
+                        <th class="sticky" style="min-width: 240px;">Gastos de Representación</th>
+                        <th class="sticky" style="min-width: 140px;">IGSS -4.83%</th>
+                        <th class="sticky" style="min-width: 140px;">IRTRA 1%</th>
+                        <th class="sticky" style="min-width: 140px;">Salario Base</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="text-align: right;">
                     <tr *ngFor="let listar of listarEmpleados; index as i">
-                        <!-- <th scope="row">{{i+1}}</th> -->
-                        <td>
+                        <th scope="row">{{i+1}}</th>
+                        <!-- <td>
                             {{listar.idemployee}}
-                        </td>
+                        </td> -->
                         <td>
                             {{listar.nombre}} {{listar.apellido}}
                         </td>
                         <td>
                             {{listar.departamento}}
+                        </td>
+                        <td>
+                            {{listar.puesto}}
                         </td>
                         <td>
                             {{listar.salarioBase}}
@@ -59,6 +65,9 @@
                         </td>
                         <td>
                             {{listar.diasLaborales}}
+                        </td>
+                        <td>
+                            {{listar.diasFestivos}}
                         </td>
                         <td>
                             {{listar.viaticos}}

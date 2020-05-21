@@ -1,3 +1,14 @@
 .modal {
     background: black;
 }
+
+.modal-content {
+    background: black;
+    .modal-header {
+        color: white;
+    }
+}
+
+.col-form-label {
+    color: white;
+}

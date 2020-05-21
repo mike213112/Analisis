@@ -1,3 +1,12 @@
 .modal {
   background: black;
 }
+.modal-content {
+  background: black;
+}
+.modal-content .modal-header {
+  color: white;
+}
+.col-form-label {
+  color: white;
+}

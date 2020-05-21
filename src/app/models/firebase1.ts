@@ -1,5 +1,5 @@
-export class Firebase {
-  $idEmpleado: string;
+export class Firebase1 {
+  $id: string;
   idemployee: number;
   nombre: string;
   apellido: string;
@@ -10,6 +10,7 @@ export class Firebase {
   horasExtras: number;
   comisiones: number;
   diasLaborales: number;
+  diasLaborales1: number;
   diasFestivos: number;
   viaticos: number;
   gastosDeRepresentacion: number;

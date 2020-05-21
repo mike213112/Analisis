@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand">MABEME</a>
+    <img style="height: 50px; width: 10opx;" src="../../../../assets/imagenes/logotipo.png">
+    <a class="navbar-brand">OUR SYSTEM</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -16,45 +17,53 @@
         <div class="card-header">
             <h1 class="color">Listado de Empleados</h1>
         </div>
-        <div class="card-body">
-            <table class="table table-hover table-dark ">
+        <div class="card-body" style="text-align: right;">
+            <table class="table table-hover table-dark tabla">
                 <thead>
                     <tr>
-                        <th style="min-width: 170px;">Editar o Eliminar</th>
-                        <th>Id_Empleado</th>
-                        <th style="min-width: 250px;">Nombre y Apellido</th>
-                        <th>Departamento</th>
-                        <th style="min-width: 140px;">Salario Base</th>
-                        <th style="min-width: 140px;">Bonificación</th>
-                        <th style="min-width: 140px;">Horas Extras</th>
-                        <th style="min-width: 140px;">Comisiones</th>
-                        <th style="min-width: 140px;">Dias Laborales</th>
-                        <th style="min-width: 140px;">Viaticos</th>
-                        <th style="min-width: 240px;">Gastos de Representación</th>
-                        <th style="min-width: 140px;">IGSS -4.83%</th>
-                        <th style="min-width: 140px;">IRTRA 1%</th>
-                        <th style="min-width: 140px;">Salario Base</th>
+                        <th class="sticky" style="min-width: 170px; text-align: center;">Editar o Eliminar</th>
+                        <th class="sticky">Id_Empleado</th>
+                        <th class="sticky" style="min-width: 250px; text-align: center;">Nombre y Apellido</th>
+                        <th class="sticky" style="min-width: 190px; text-align: center;">Departamento</th>
+                        <th class="sticky" style="min-width: 190px; text-align: center;">Puesto</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">Salario Base</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">Bonificación</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">Horas Extras</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">Comisiones</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">Dias Laborales</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">Dias Festivos</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">Viaticos</th>
+                        <th class="sticky" style="min-width: 240px; text-align: center;">Gastos de Representación</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">IGSS -4.83%</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">IRTRA 1%</th>
+                        <th class="sticky" style="min-width: 140px; text-align: center;">Salario Base</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let listar of listarEmpleados; index as i">
                         <!-- <th scope="row">{{i+1}}</th> -->
-                        <td>
+                        <td style="text-align: center;">
                             <a class="btn btn-success text-white" (click)="Editar(listar)" data-toggle="modal" data-target="#modalEdit">
                                 <i class="far fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger text-white" (click)="Delect(listar.$idEmpleado)">
+                            <a class="btn btn-danger text-white" (click)="Delect(listar.$id)">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>
-                        <td>
+                        <th scope="row">
+                            {{i+1}}
+                        </th>
+                        <!-- <td>
                             {{listar.idemployee}}
-                        </td>
+                        </td> -->
                         <td>
                             {{listar.nombre}} {{listar.apellido}}
                         </td>
                         <td>
                             {{listar.departamento}}
+                        </td>
+                        <td>
+                            {{listar.puesto}}
                         </td>
                         <td>
                             {{listar.salarioBase}}
@@ -70,6 +79,9 @@
                         </td>
                         <td>
                             {{listar.diasLaborales}}
+                        </td>
+                        <td>
+                            {{listar.diasFestivos}}
                         </td>
                         <td>
                             {{listar.viaticos}}
