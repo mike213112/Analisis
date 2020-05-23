@@ -1,0 +1,58 @@
+<div class="modal fade" id="modalVer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modificar Empleado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+            </div>
+            <div class="modal-body ">
+                <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+                    <div class="form-label-group" class="form-group">
+                        <input type="hidden" id="$id" name="$id" #$id="ngModel" [(ngModel)]="this.baseService.Usuarios.$id" class="form-control">
+                    </div>
+                    <div class="form-label-group" class="form-group">
+                        <!-- <label for="message-text" class="col-form-label">Id del Empleado:</label>
+                      <input disabled type="text" id="idemployee" class="form-control" name="idemployee" #idemployee="ngModel" [(ngModel)]="baseService.Usuarios.idemployee" placeholder="Id del Empleado"> -->
+                        <label for="message-text" class="col-form-label">Nombre:</label>
+                        <input disabled type="text" id="nombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="baseService.Usuarios.nombre" placeholder="Nombre">
+                        <label for="message-text" class="col-form-label">Apellido:</label>
+                        <input disabled text="text" id="apellido" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="baseService.Usuarios.apellido" placeholder="Apellido">
+                        <label for="message-text" class="col-form-label">Departamento:</label>
+                        <input disabled text="text" id="departamento" class="form-control" name="departamento" #departamento="ngModel" [(ngModel)]="baseService.Usuarios.departamento" placeholder="Departamento">
+                        <label for="message-text" class="col-form-label">Dias Festivos:</label>
+                        <input disabled text="text" id="puesto" class="form-control" name="puesto" #puesto="ngModel" [(ngModel)]="baseService.Usuarios.puesto" placeholder="Puesto">
+                        <br>
+                        <label for="message-text" class="col-form-label">Salario Base:</label>
+                        <input disabled text="text" id="salarioBase" class="form-control" name="salarioBase" #salarioBase="ngModel" [(ngModel)]="baseService.Usuarios.salarioBase" placeholder="Salario Base">
+                        <label for="message-text" class="col-form-label">Bonificación:</label>
+                        <input disabled text="text" id="bonificacion" class="form-control" name="bonificacion" #bonificacion="ngModel" [(ngModel)]="baseService.Usuarios.bonificacion" placeholder="Bonificacion">
+                        <label for="message-text" class="col-form-label">Horas Extras:</label>
+                        <input disabled text="text" id="bonificacion" class="form-control" name="horasExtras" #horasExtras="ngModel" [(ngModel)]="baseService.Usuarios.horasExtras" placeholder="Horas Extras">
+                        <label for="message-text" class="col-form-label">Comisiones:</label>
+                        <input disabled text="text" id="comisiones" class="form-control" name="comisiones" #comisiones="ngModel" [(ngModel)]="baseService.Usuarios.comisiones" placeholder="Comisiones">
+                        <label for="message-text" class="col-form-label">Dias Laborales:</label>
+                        <input disabled text="text" id="diasLaborales" class="form-control" name="diasLaborales" #diasLaborales="ngModel" [(ngModel)]="baseService.Usuarios.diasLaborales" placeholder="Dias Laborales">
+                        <label for="message-text" class="col-form-label">Dias Festivos:</label>
+                        <input disabled text="text" id="diasLaborales" class="form-control" name="diasFestivos" #diasFestivos="ngModel" [(ngModel)]="baseService.Usuarios.diasFestivos" placeholder="Dias Festivos">
+                        <label for="message-text" class="col-form-label">Viaticos:</label>
+                        <input disabled text="text" id="viaticos" class="form-control" name="viaticos" #viaticos="ngModel" [(ngModel)]="baseService.Usuarios.viaticos" placeholder="Viaticos">
+                        <label for="message-text" class="col-form-label">Gastos de Representacion:</label>
+                        <input disabled text="text" id="gastosDeRepresentacion" class="form-control" name="gastosDeRepresentacion" #gastosDeRepresentacion="ngModel" [(ngModel)]="baseService.Usuarios.gastosDeRepresentacion" placeholder="Gastos De Representacion">
+                        <label for="message-text" class="col-form-label">IGSS:</label>
+                        <input disabled text="text" id="igss" class="form-control" name="igss" #igss="ngModel" [(ngModel)]="baseService.Usuarios.igss" placeholder="IGGS">
+                        <label for="message-text" class="col-form-label">IRTRA:</label>
+                        <input disabled text="text" id="aporteAlIva" class="form-control" name="aporteAlIva" #aporteAlIva="ngModel" [(ngModel)]="baseService.Usuarios.aporteAlIva" placeholder="Aporte Al Iva">
+                        <label for="message-text" class="col-form-label">Salario Bruto:</label>
+                        <input disabled text="text" id="salarioBruto" class="form-control" name="salarioBruto" #salarioBruto="ngModel" [(ngModel)]="baseService.Usuarios.salarioBruto" placeholder="Salario Bruto">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-block btn-secondary" #btnClose data-dismiss="modal">Cerrar</button>
+                            <!-- <button type="submit" class="btn btn-block btn-primary">Guardar Cambios</button> -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

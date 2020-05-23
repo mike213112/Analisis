@@ -20,10 +20,12 @@
                 <thead style="text-align: center;">
                     <tr>
                         <th>Id_Empleado</th>
-                        <th class="sticky" style="min-width: 250px;">Nombre y Apellido</th>
+                        <th class="sticky" style="min-width: 250px;">Nombre</th>
+                        <th class="sticky" style="min-width: 250px;">Apellido</th>
                         <th class="sticky" style="min-width: 190px;">Departamento</th>
                         <th class="sticky" style="min-width: 190px;">Puesto</th>
-                        <th class="sticky" style="min-width: 140px;">Salario Base</th>
+                        <th class="sticky" style="min-width: 190px;">Ver Empleado</th>
+                        <!-- <th class="sticky" style="min-width: 140px;">Salario Base</th>
                         <th class="sticky" style="min-width: 140px;">Bonificación</th>
                         <th class="sticky" style="min-width: 140px;">Horas Extras</th>
                         <th class="sticky" style="min-width: 140px;">Comisiones</th>
@@ -33,7 +35,7 @@
                         <th class="sticky" style="min-width: 240px;">Gastos de Representación</th>
                         <th class="sticky" style="min-width: 140px;">IGSS -4.83%</th>
                         <th class="sticky" style="min-width: 140px;">IRTRA 1%</th>
-                        <th class="sticky" style="min-width: 140px;">Salario Base</th>
+                        <th class="sticky" style="min-width: 140px;">Salario Base</th> -->
                     </tr>
                 </thead>
                 <tbody style="text-align: right;">
@@ -43,15 +45,17 @@
                             {{listar.idemployee}}
                         </td> -->
                         <td>
-                            {{listar.nombre}} {{listar.apellido}}
-                        </td>
-                        <td>
-                            {{listar.departamento}}
-                        </td>
-                        <td>
-                            {{listar.puesto}}
-                        </td>
-                        <td>
+                            {{listar.nombre}}
+                            <td>
+                                {{listar.apellido}}
+                            </td>
+                            <td>
+                                {{listar.departamento}}
+                            </td>
+                            <td>
+                                {{listar.puesto}}
+                            </td>
+                            <!-- <td>
                             {{listar.salarioBase}}
                         </td>
                         <td>
@@ -83,10 +87,18 @@
                         </td>
                         <td>
                             {{listar.salarioBruto}}
-                        </td>
+                        </td> -->
+
+                            <td style="text-align: center;">
+                                <a class="btn btn-secondary text-white" (click)="Editar(listar)" data-toggle="modal" data-target="#modalVer">
+                                   Ver <i class="far fa-eye"></i>
+                                </a>
+                            </td>
+
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<analisis-verwithmodal></analisis-verwithmodal>

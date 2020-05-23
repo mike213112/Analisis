@@ -35,4 +35,15 @@ export class PerfilComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
+  Editar(usuario: Firebase1){
+    this.user.Usuarios = Object.assign({}, usuario);
+  }
+
+  Delect($id: string){
+    if(confirm('Estas seguro de querer eliminar este empleado del sistema?')){
+      this.user.EliminarUsuario($id);
+      this.mensaje.success('El empleado ha sido eliminado correctamente');
+    }
+  }
+
 }

@@ -27,6 +27,7 @@ import { CrearusuarioComponent } from './componentes/modals/crearusuario/crearus
 import { CrearcuentaComponent } from './componentes/modals/crearcuenta/crearcuenta.component';
 import { EditarusuarioComponent } from './componentes/modals/editarusuario/editarusuario.component';
 import { EditarwithmodalComponent } from './componentes/editarwithmodal/editarwithmodal.component';
+import { VerwithmodalComponent } from './componentes/verwithmodal/verwithmodal.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EditarwithmodalComponent } from './componentes/editarwithmodal/editarwi
     CrearusuarioComponent,
     CrearcuentaComponent,
     EditarusuarioComponent,
-    EditarwithmodalComponent
+    EditarwithmodalComponent,
+    VerwithmodalComponent
   ],
   imports: [
     BrowserModule,

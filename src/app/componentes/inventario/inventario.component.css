@@ -6,7 +6,9 @@
 }
 .container {
   max-width: 95%;
+  max-height: 83%;
   overflow-x: scroll;
+  overflow-y: scroll;
 }
 .card-body th,
 .card-body td {
